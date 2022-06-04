@@ -27,7 +27,7 @@ class DataService {
   Future<List<PostModel>> getPosts() async {
     final response = await get(
         Uri.parse('https://62626d89d5bd12ff1e7ce96a.mockapi.io/dataBase'));
-    final activity = boredActivityFromJson(response.body);
+    final activity = postModelFromJson(response.body);
     log(response.body);
     return activity;
   }
