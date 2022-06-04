@@ -8,7 +8,7 @@ part 'posts_state.dart';
 
 class PostsBloc extends Bloc<PostsEvent, PostsState> {
   final _dataServise = DataService();
-  PostsBloc() : super(LoadingState()) {
+  PostsBloc(DataService dataService) : super(LoadingState()) {
     on<PostsEvent>((event, emit) async {
       print(event);
       if (event is LoadEvent) {
